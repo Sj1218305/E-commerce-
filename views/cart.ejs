@@ -1,0 +1,121 @@
+<% include partials/header %>                         
+
+
+<% var sum =0;	
+products.forEach(function(product){
+	match = /\d+(,\d+)?/.exec(product.Price2);     
+var p;
+if (match) {
+  p = Number(match[0].replace(',', ''));	
+}
+	sum =sum + p;   
+	}); %>
+
+<% var discount =0;	
+products.forEach(function(product){
+	match = /\d+(,\d+)?/.exec(product.discount);     
+var d;
+if (match) { 
+  d = Number(match[0].replace(',', ''));	
+}
+	discount =discount + d;   
+	}); %>
+
+<% var total =0;	
+products.forEach(function(product){
+	match = /\d+(,\d+)?/.exec(product.Price1);     
+var t;
+if (match) {
+  t = Number(match[0].replace(',', ''));	
+}
+total =total + t;   
+	}); 
+total = total + 50;
+%>
+
+
+
+
+	
+
+	<div class="ui divided selection list">
+  <a class="item">
+    <div class="ui red horizontal label">ITEMS</div>
+    <%= items %>
+  </a>
+</div>
+
+
+<table class="ui red table" border = "1">
+  <thead>
+    <tr>
+	
+	<th>Item Details</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  <th>Sub Total</th>
+	<th>Remove</th>
+	  </tr></thead>
+	<tbody>
+	
+		
+		<% products.forEach(function(product){ %>  
+		<tr>
+    	<td id="result"><img class="ui top aligned tiny image" src="<%= product.image %>">
+<span ><%= product.name %></span>
+<div class="ui divider"></div></td>
+      <td ><%= product.Price2 %></td>
+      <td>1</td>
+      <td ><%= product.Price1 %></td>
+		<td> <button  type="button" onclick="remove('<%= product.id %>')">  
+        	<i class="calendar times icon"></i>
+		 </button>  </td>
+		</tr>
+	<%	}); %>
+	</tbody>
+</table>	
+
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Total Charges
+</h4>
+<span style="display: block;  text-align: center;" class="ui large label">
+    Price :
+    <div class="detail"> Rs.<%= sum %></div>
+  </span>
+<span style="display: block;  text-align: center;" class="ui large label">
+    Discount :
+    <span  class="detail"> <%= discount %> %</span>
+  </span>
+<span style="display: block;  text-align: center;" class="ui large label">
+    Delivery Charges :
+    <span  class="detail">Rs. 50</span>
+  </span>
+<span style="display: block;  text-align: center;" class="ui large label">
+    Total :
+    <span class="detail"><%= total %></span>
+  </span>
+ <a style="float : center; "class="ui inverted red button" href = "/shipping">Proceed to Checkout</a>
+<script>
+	 function remove(x)
+	{	
+		
+		$.ajax({
+		type:'POST',	
+        url: '/updateCart/'+x,
+        success: function(data) {
+			window.location.href = '/cart';	
+			},
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert('error ' + textStatus + " " + errorThrown);
+        }
+    });
+		 
+
+} 
+ </script>
+ 
+
+
+
+<% include partials/footer %>

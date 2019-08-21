@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>E-commerce</title>
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/checkbox.min.js"></script>>
+
+</head>
+<style>
+	
+	.side-menu{
+    height: 100%;
+    width: 15%;
+    font-size: 14px;
+    float: left;
+    z-index: 2;
+    background-color: #ddd;
+    margin-top: 12px;
+  }
+  
+  .side-menu ul{
+    margin-left: 10px;
+  }
+  
+  .side-menu ul li{
+    list-style-type: none;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .side-menu ul li: hover{
+    color: orange;
+  }
+  .side-menu ul li ul{
+    display: none;
+    z-index: 10;
+    top: 77px;
+  }
+  .side-menu ul li:hover ul{
+    color: orange;
+    display: block;
+    height: 400px;
+    margin-left: 14%;
+    padding: 0 100px 10px 10px;
+    position: fixed;
+    background: #ececec;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+  }
+  
+  .fa fa-angle-right{
+    margin top: 4px;
+    margin-right: 8px;
+    float: right;
+  }
+  
+  .slider{
+    width: 85%;
+    margin-left: 15%;
+    padding: 0 1ppx;
+  }
+}
+	.ui.icon.input>input{
+		margin-right: 500px;
+	}
+	
+	
+	</style>
+
+<body>
+<div class="ui massive  menu">
+ 
+  <div class="right menu">
+   <div class="ui category search">
+  <div class="ui icon input">
+    <input class="prompt" type="text" placeholder="Search categories...">
+   
+  <div class="results"></div>
+	  </div>
+</div>   
+     <a class="active item">
+   <i class="shopping cart icon"></i> Cart
+  </a>
+<% if(!currentUser){ %>
+	  <a href= "/login" class="active item">
+	  <i class="sign in alternate icon" ></i> 
+   Sign In
+  </a>
+	<%  } else{ %>
+	   <a href = '/history' class="active item">
+   <i class="user outline icon"></i> <%= currentUser.username %> 
+  </a>
+	  <a href= "/logout" class="active item">
+	  Log Out
+  </a>
+	<%  } %>
+	  </div>
+	</div>
+	
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>

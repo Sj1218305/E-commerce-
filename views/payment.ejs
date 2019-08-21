@@ -1,0 +1,23 @@
+<% 
+var Insta                   = require("instamojo-nodejs");
+
+Insta.setKeys('test_106e049e58110907859d3f6cbd3','test_2ba33840facb227e08b241da63a');
+Insta.isSandboxMode(true);
+
+var data = new Insta.PaymentData();
+
+var data = new Insta.PaymentData();
+ 
+data.purpose = "Test";            // REQUIRED
+data.amount = 9;                  // REQUIRED
+data.setRedirectUrl('https://test.instamojo.com/api/1.1/');
+ 
+Insta.createPayment(data, function(error, response) {
+  if (error) {
+    // some error
+  	console.log(error);
+  } else {
+    // Payment redirection link at response.payment_request.longurl
+    console.log(response);
+  }
+}); %>

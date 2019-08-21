@@ -1,0 +1,54 @@
+<% include partials/header %>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+<form  action="/addProduct/<%= product._id %>" method="POST">
+	
+
+<div class="ui breadcrumb">
+  <a class="section">Home</a>
+  <i class="right angle icon divider"></i>
+  <a class="section">Categories</a>
+  <i class="right angle icon divider"></i>
+  <div class="active section"><%= product.category %></div>
+</div>
+
+<div class="ui items">
+  <div class="item">
+    <img class="ui medium rounded image" src="<%= product.image %>">
+	  <div class="content">
+      <div class="ui huge header"><%= product.name %></div>
+      <div class="meta">
+       <span class="stay">Product Description:</span>
+      </div>
+     <div class="ui floating message">
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+    <div class="ui tag labels">
+  <a class="ui label" style="text-decoration: line-through;">
+    <%= product.actualPrice %>
+  </a>
+  <a class="ui label">
+    <%= product.sellingPrice %>
+  </a>
+	</div>
+	<div class="ui compact menu" style="margin-top: 20px;"> 
+  <a class="item">
+    <i class="percent icon"></i> Discount
+    <div class="floating ui red label"><%= product.discount %></div>
+  </a>
+  <a class="item">    
+    <i class="sort numeric up icon"></i> Quantity
+    <div class="floating ui teal label">1</div>
+  </a>
+</div>	  
+	 <a style="display:block;margin-top: 20px;">
+	<div class="ui buttons">
+ <input type="submit" value="Add to Cart"  class="ui red basic  button  massive ui button"/>
+ </div>
+	</a> 
+	  </div>
+  </div>
+</div>
+</form>
+	<% include partials/footer %>

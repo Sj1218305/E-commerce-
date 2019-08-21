@@ -1,0 +1,75 @@
+body{
+	background-color: black ;
+	font-family : sans-serif;
+}
+
+.top-nav-bar{
+	height : 57px;
+	top: 0;
+	position: static;
+	background: #fff;
+	border-bottom: 3px solid orange;
+	z-index: 2;
+}
+
+.logo{
+	height: 40px;
+	margin: 10px 10px;
+}
+
+.input-group-text{
+	background : orange;
+	border: 1px solid orange;
+	margin: 8.5px 10px 3px 0;
+	border-top-left-radius: 0 ;
+	border-bottom-left-radius: 0 ;
+	border-top-right-radius: 20px ;
+	border-bottom-right-radius:	20px ;	
+	cursor: pointer;
+		}
+		
+.search-box{
+		display: inline-flex;
+		width: 60%;
+		}
+.form-comtrol{
+		margin-top: 9px;
+		margin-left: 30px;
+		border: 1px solid orange ;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px ;
+		border-top-right-radius: 0 ;
+		border-bottom-right-radius: 0 ;
+		box-shadow: none ;
+		}	
+ul{
+		padding: 0;
+		margin: 0;
+	}
+.menu-bar{
+			width: 40%;
+			height: 40px;
+			float: right;
+		}
+.menu-bar ul{
+			display: inline-flex;
+			float: right;
+			}
+	
+.menu-bar ul li{
+			border-left: 1px solid #fff;
+			padding: 3px 67px;
+			text-align: center;
+			background-color: orange;
+			cursor: pointer;
+		}
+		.menu-bar ul li a{
+			font-size: 16px;
+			font-weight: bold;
+			color: #fff;
+			}
+	
+		.shopping-basket{
+			
+			margin-right: 5px;
+		}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>E-commerce</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/checkbox.min.js"></script>
+	</head>
+<body>
+	
+	
+<form class="ui form" action="/addDetails"  method="post" >
+  <h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Shipping Details
+</h4>
+  <div class="field">
+    <label>Name</label>
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="details[firstName]" placeholder="First Name">
+      </div>
+      <div class="field">
+        <input type="text" name="details[lastName]" placeholder="Last Name">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Billing Address</label>
+    <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="details[address]" placeholder="address">
+      </div>
+      <div class="four wide field">
+        <input type="number" name="details[pincode]" placeholder="pincode">
+      </div>
+    </div>
+  </div>
+  <div class="two fields">
+    <div class="field">
+      <label>State</label>
+     <input type="text" name="details[state]" placeholder="state">
+    </div>
+    <div class="field">
+      <label>Country</label>
+      
+        <input type="text" name="details[country]"  placeholder="country">
+		</div>
+	  </div>
+	<h4 class="ui dividing header">Mobile No.</h4>
+   <div class="field">
+    <label>Mobile No. (primary)</label>
+    <div class="two fields">
+      <div class="field">
+        <input type="number" name="details[number1]" placeholder="">
+      </div>
+      <div class="field">
+        <label>Mobile No. (secondary)</label>
+		  <input type="number" name="details[number2]" placeholder="">
+      </div>
+    </div>
+  </div>
+  <div class="ui form">
+  <div class="inline fields">
+    <label>Payment Options</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency" checked="checked">
+        <label>Cash On Delivery</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Online</label>
+      </div>
+    </div>
+	  </div>
+	</div>
+	<input type="submit" value= "Place Order" class="ui button" />
+</form>
+	</body>
+</html>
+

@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+<h2 class="ui center aligned icon header">
+  <i class="circular users icon"></i>
+  Sign Up 
+</h2>
+
+<form class="ui form" action="/register" method="POST">
+  <div class="field">
+    <label>User Name</label>
+    <input type="text" name="username" placeholder="Username">
+  </div>
+  <div class="field">
+	<label>Password</label>
+    <input type="password" name="password" placeholder="Password">
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+</form>
+
+
+<% include partials/footer %>
